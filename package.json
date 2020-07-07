@@ -1,0 +1,20 @@
+{
+  "name": "HueAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "color": "^3.1.2",
+    "meteor-random": "0.0.3",
+    "mongodb": "^3.5.9",
+    "socket.io": "^2.3.0",
+    "underscore": "^1.10.2"
+  }
+}
