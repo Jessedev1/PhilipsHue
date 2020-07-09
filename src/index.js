@@ -6,6 +6,7 @@ let username = "6Iv4Q2EMpwRvLZ17ejdtHn61KoYTbp9adBTp27wq";
 const hue = new PhilipsHue();
 
 (async function start() {
-    const lights = await hue.lights(username);
-    // console.log(await lights.delete(4))
+    const groups = await hue.groups(username);
+
+    console.log(await groups.delete(6));
 })();

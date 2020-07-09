@@ -14,9 +14,6 @@ class Lights extends Request {
 
         if (request.success) {
             let data = request.data;
-            if (!Array.isArray(data)) {
-                data = [data];
-            }
 
             const lights = [];
             _.each(data, (lamp, index) => {
@@ -92,7 +89,9 @@ class Lights extends Request {
         const request = await this.request('GET', `${this.username}/lights/${light_identifier}`);
 
         if (request.success) {
-            return request.data;
+            const data = request.data;
+            if (data[0] && data[0].error) return [];
+            return data;
         } else {
             return [];
         }
