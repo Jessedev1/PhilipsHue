@@ -1,5 +1,6 @@
 {
   "settings": {
+    "application_name": "hue_api",
     "bridge_address": "192.168.178.136"
   }
 }
