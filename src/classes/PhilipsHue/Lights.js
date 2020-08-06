@@ -8,6 +8,13 @@ class Lights extends Request {
         this.setAPIUrl(`http://${this.settings.bridge_address}/api`);
     }
 
+    /**
+     * This method will get the data of the light.
+     * When parameter "light_identifier" is null all lights will be returned.
+     *
+     * @param light_identifier
+     * @returns {Promise<[]|*[]>}
+     */
     async get(light_identifier = null) {
         //Call to lights endpoint of PhilipsHue API
         const request = await this.request('GET', `${this.username}/lights${(!!light_identifier) ? `/${light_identifier}` : ``}`);
@@ -47,6 +54,14 @@ class Lights extends Request {
         return [];
     }
 
+    /**
+     * Get all new lights.
+     * When the PhilipsHue bridge has searched for new lights they can be retreived my this method.
+     * If success is false this can happen because the bridge is searching, or haven't searched for lights yet.
+     * Otherwise the data will be returned.
+     *
+     * @returns {Promise<{success: boolean, message: string}|*[]|*>}
+     */
     async getNew() {
         const request = await this.request('GET', `${this.username}/lights/new`);
 

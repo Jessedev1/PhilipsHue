@@ -3,6 +3,7 @@ const Color = require('../../assets/color-js/color');
 Lights = require('./Lights.js');
 Groups = require('./Groups.js');
 Schedules = require('./Schedules.js');
+Scenes = require('./Scenes.js');
 Configuration = require('./Configuration.js');
 
 
@@ -63,6 +64,10 @@ class PhilipsHue extends Request {
 
     async schedules(username) {
         return new Schedules(username);
+    }
+
+    async scenes(username) {
+        return new Scenes(username);
     }
 
     async configuration(username) {

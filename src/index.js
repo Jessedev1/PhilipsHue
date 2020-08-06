@@ -6,7 +6,6 @@ let username = "6Iv4Q2EMpwRvLZ17ejdtHn61KoYTbp9adBTp27wq";
 const hue = new PhilipsHue();
 
 (async function start() {
-    const conf = await hue.configuration(username);
-
-    console.log(await conf.getConfiguration());
+    const scenes = await hue.scenes(username);
+    console.log(await scenes.get());
 })();
